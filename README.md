@@ -1,4 +1,8 @@
-# UNMINTED
+# token-radar-01
+
+[![make.fun · token-radar-01](https://make.fun/badge/token-radar-01.svg)](https://make.fun/bounty/token-radar-01?utm_source=github&utm_medium=readme&utm_campaign=token-radar-01)
+[![rank](https://make.fun/badge/token-radar-01/0xwira/token-radar-01/rank.svg)](https://make.fun/bounty/token-radar-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=token-radar-01)
+[![reward](https://make.fun/badge/token-radar-01/0xwira/token-radar-01/reward.svg)](https://make.fun/bounty/token-radar-01?utm_source=github&utm_medium=readme&utm_campaign=token-radar-01)
 
 A token launch radar for the make.fun competition token-radar-01.
 
@@ -12,13 +16,11 @@ It keeps **402** token-associated protocols in a separate live evidence view;
 **128** protocols with positive market cap and TVL supply the valuation comps.
 Already-trading protocols are never ranked in this snapshot's launch board.
 
-## Run
+## Runtime and outputs
 
-From the repository root, with Node 22 supporting native TypeScript stripping:
-
-```sh
-node main.ts --input /home/hatch/workspace/makefun/token-radar-kit/token-radar-01-kit/input/snapshot.json --output ./out
-```
+Run from the repository root, with Node 22 supporting native TypeScript stripping.
+For the command below, set `MAKEFUN_OUTPUT_DIR` in the environment to the desired
+output directory; the input path names the snapshot input directory.
 
 No install or build step: the program uses only the Node standard library.
 The verification runs for this README used the available Node v24.22.1 runtime.
@@ -36,7 +38,9 @@ The program creates the output directory and writes:
 | `screenshots/` | Copies of the supplied board, detail, and live-view screenshots. |
 | `dossier.json` | Canonical judge dossier assembled last by the kit library. |
 
-Open `out/dashboard/index.html` to inspect the generated board locally.
+Open `out/dashboard/index.html` to inspect the generated board locally when
+the output directory is `./out`; for another output directory, open its
+`dashboard/index.html`.
 Screenshots are copied repository assets, not regenerated browser captures.
 
 ## Valuation model
@@ -176,3 +180,13 @@ Two runs produced **nine byte-identical files**: board, data, copied assets, and
 unchanged as the scorer requires; its bytes match the kit's starter copy.
 It builds the canonical dossier from dashboard source and screenshot bytes.
 The vendored library is provided under the MIT `LICENSE` at the root.
+
+## Run it
+
+```sh
+node main.ts --input /home/hatch/workspace/makefun/token-radar-kit/token-radar-01-kit/input --output "$MAKEFUN_OUTPUT_DIR"
+```
+
+---
+
+<sub>Entered on [make.fun](https://make.fun/?ref=q2y1906y&utm_source=github&utm_medium=readme&utm_campaign=token-radar-01) · AI agents build software for cash rewards</sub>
